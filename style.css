@@ -1,153 +1,145 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  * {
-    margin: 0;
-  }
-  body {
-    /* line-height: 1.5; */
-    -webkit-font-smoothing: antialiased;
-  }
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  input, button, textarea, select {
-    font: inherit;
-  }
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  #root, #__next {
-    isolation: isolate;
-  }
-  
-  @font-face {
-    font-family: norse-bold;
-    src: url(./fonts/Norse-Bold.otf);
-  }
-  
-  html {
-    height: 100%;
-    width: 100%;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    background: black;
-    margin: 0;
-  }
-  
-  #design {
-    display: flex;
-    width: 100%;
-    aspect-ratio: 100/71;
-    background: white;
-  }
-    #imageHolder {
-      position: relative;
-      width: 37%;
-      overflow: hidden;
-    
-      #ferns {
-        height: 100%;
-        transform: scale(1.28, 1);
-      }
+@font-face {
+  font-family: norse-bold;
+  src: url(fonts/Norse-Bold.otf);
+}
 
 
-    #logoCaption {
-        position: absolute;
-        top: 22%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        aspect-ratio: 100/28;
-        font-family: norse-bold, sans-serif;
-        font-size: 3.3vw;
-        color: white;
-        background-color:rgba(0, 0, 0, 0.48);
-  
-        #logo {
-          height: 85%;
-        }
-      }
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
 
-      
-      #credits {
-        position: absolute;
-        bottom: 1%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 9px;
-  
-        a:link {
-          color: white;
-        }
-        a:visited {
-          color: white;
-        }
-      }
-    }
-    
-    #contentHolder {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 63%;
-        background-color: #F9FAFB;
-        font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
-        /* Get missing fonts */
-    }
-        section {
-          padding-left: 10%;
-          padding-right: 15%;
-    
-            button {
-            border: none;
-            border-radius: 5px;
-            height: 33px;
-            width: 155px;
-            background-color: #397208;
-            color: white;
-            font-size: 11px;
-            font-weight: bold;
-           *
-            + p {
-              font-size: 11.5px;
-              margin-top: 45%;
-    
-              a {
-                color:#596D48;
-                font-weight: bold;
-                text-decoration: none;
-              }
-            }
-          }
-        }
 
-        #pitch, p {
-            font-weight: bold;
-      
-            :last-child {
-              margin-top: 5%;
-            }
-          } 
-          #pitch, p {
-            font-weight: bold;
-      
-            :first-child {
-              margin-top:  -33%;
-            }
-          } 
+.container{
+  display: flex;
+}
+
+.left{
+  position: relative;
+  flex: 1 1 30%;
+  background-image: url(./Images/kasia.jpg);
+  background-size: cover;
+}
+
+.odin{
+  position: relative;
+  top:150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000068;
+  padding: 20px;
+}
+
+.odin-logo{
+  height: 130px;
+}
+
+.odin-text{
+  font-family: norse-bold, Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+
+.image-credit{
+  position: absolute;
+  color: white;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.image-credit a{
+  color: white;
+}
+
+.right{
+  flex: 1 1 60%;
+  background-color: #e4e4e4;
+  display: flex;
+  flex-direction: column;
+}
+
+.right .top-text{
+  font-size: 25px;
+  font-weight: 600;
+  padding: 80px;
+}
+
+.top-text p{
+  padding: 20px;
+}
+
+.right .form-container{
+  background-color: white;
+  padding: 40px 100px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.237);
+}
+
+#sign-up-form{
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+#sign-up-form .form-fields{
+  display: flex;
+  gap: 40px;
+}
+
+#sign-up-form input{
+  width: 245px;
+  height: 1.5rem;
+  font-size: 1.25rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+#sign-up-form input::placeholder{
+  font-size: 1rem;
+}
+
+#sign-up-form input:focus{
+  outline: none;
+  border: 1px solid rgb(0, 94, 255);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.416);
+}
+
+#sign-up-form input:invalid:not(:placeholder-shown){
+  outline: none;
+  border: 1px solid red;
+}
+
+label::after{
+  content: "*";
+  color: red;
+}
+
+.button-container{
+  padding: 40px 100px;
+  padding-bottom: 189px
+}
+
+.create-account{
+  background-color: #596D48;
+  color: white;
+  width: 200px;
+  height: 3rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+}
+
+.login-text{
+  font-size: 1.15rem;
+}
+
+.login{
+  color: #596D48;
+  text-decoration: none;
+} 
